@@ -1,0 +1,46 @@
+  <style>
+      body {
+      background-image: linear-gradient(to right, #B0E0E6,#008080 );
+    }
+
+    h1 {
+      color: linear-gradient(to right,  #B0E0E6 , #008080);
+    }
+
+    button {
+      border: 1px solid linear-gradient(to right, #B0E0E6, #008080);
+    }
+</style>
+<div class="admin-section">
+<div class="my-bookings">
+  <h1>My Bookings</h1>
+<p> To get the bus Loaction give the below details</p>
+ <form action="Ticket number" method="post">
+    <input type="text" name="source" placeholder="Source city">
+    <input type="text" name="destination" placeholder="Destination city">
+    <input type="date" name="date" placeholder="Travel date">
+    <input type="text" name="status" placeholder="Bus number">
+ <input type="text" name="Bus location" placeholder="Bus location">
+<input type="text" name="Bus location" placeholder="Ticket Number">
+</div>
+    <h3>Manage Bus Information</h3>
+    <ul>
+      <li><a href="/admin/bus-categories">Manage Bus Categories</a></li>
+      <li><a href="/admin/buses">Manage Buses</a></li>
+    </ul>
+
+    <h3>Manage Users</h3>
+    <ul>
+      <li><a href="/admin/users">Manage Registered Users</a></li>
+    </ul>
+
+    <h3>Manage News</h3>
+    <ul>
+      <li><a href="/admin/news">Manage News Articles</a></li>
+    </ul>
+
+    <h3>Generate Reports</h3>
+    <ul>
+      <li><a href="/admin/reports">Generate Booking Reports</a></li>
+    </ul>
+  </div>

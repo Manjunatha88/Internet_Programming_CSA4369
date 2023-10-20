@@ -1,0 +1,108 @@
+ <style>
+      body {
+      background-image: linear-gradient(to right, #B0E0E6,#008080 );
+    }
+
+    h1 {
+      color: linear-gradient(to right,  #B0E0E6 , #008080);
+    }
+
+    button {
+      border: 1px solid linear-gradient(to right, #B0E0E6, #008080);
+    }
+
+.image-container {
+    display: flex;
+}
+
+.image-container img {
+    margin: 5px; /* Add margin for spacing between images */
+}
+</style>
+<html>
+
+<h1>Simple Bus Booking Website</h1>
+
+  <form action="/book-ticket" method="post">
+    <input type="text" name="source" placeholder="Source city">
+    <input type="text" name="destination" placeholder="Destination city">
+    <input type="date" name="date" placeholder="Travel date">
+    <input type="number" name="number_of_tickets" placeholder="Number of tickets">
+
+    <select name="bus_brand">
+      <option value="Volvo">Volvo</option>
+      <option value="Mercedes">Mercedes</option>
+      <option value="Scania">Scania</option>
+      <option value="MAN">MAN</option>
+      <option value="Ashok Leyland">Ashok Leyland</option>
+      <option value="Tata Marcopolo">Tata Marcopolo</option>
+      <option value="Bharat Benz">Bharat Benz</option>
+    </select>
+
+    <select name="seat_type">
+      <option value="AC Sleeper">AC Sleeper</option>
+      <option value="Non-AC Sleeper">Non-AC Sleeper</option>
+      <option value="AC Semi-Sleeper">AC Semi-Sleeper</option>
+      <option value="Non-AC Semi-Sleeper">Non-AC Semi-Sleeper</option>
+      <option value="AC Seater">AC Seater</option>
+      <option value="Non-AC Seater">Non-AC Seater</option>
+      <option value="AC Push Back">AC Push Back</option>
+      <option value="Non-AC Push Back">Non-AC Push Back</option>
+    </select>
+
+<div class="my-bookings">
+  <h1>My Bookings</h1>
+<a href="bus_det.html"><input type="button" value="To get the bus details !!"></a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Ticket Number</th>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+ <input type="text" id="userInput" placeholder="Enter something">
+    <button onclick="displayInput()">Display Input</button>
+    <p id="displayArea"></p>
+
+    <script src="script.js">
+function displayInput() {
+    var userInput = document.getElementById("userInput").value;
+    var displayArea = document.getElementById("displayArea");
+    displayArea.textContent = "You entered: " + userInput;
+}
+
+</script>
+      </tbody>
+  </table>
+<div class="image-container">
+        <img src="bus_C.jpg" alt="Image 1" height="250" weidth="200">
+        <img src="seat-merc.jpg" alt="Image 2">
+<img src="bus_V.jpg" alt="Image 3" height="250" weidth="250">
+<img src="bus_c1.jpg" alt="Image 4"height="250" weidth="250">
+
+    </div>
+    <a href="Bus_info.html"><input type="button" value="BOOK TICKET"></a>
+
+    </div>
+  <div class="cancel-ticket-button">
+    <a href="dum1.html"><input type="button" value="CANCEL TICKET"></a>
+ </div>
+  </div>
+</div>
+
+
+    <div class="form-group">
+      <input type="checkbox" name="terms_and_conditions" required>
+      <label for="terms_and_conditions">I agree to the terms and conditions.</label>
+<a href="Bus_info.html"><input type="button" value="SUBMIT"></a>
+
+    </div>
+
+  </form>
+</html>
