@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shop Dairy Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2E7D32;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        nav {
+            background-color: #388E3C;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #2E7D32;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #333;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2E7D32;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .product-image {
+            max-width: 100px;
+        }
+
+        /* Added cart styles */
+        .cart-container {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+
+        .cart-button {
+            background-color: #2E7D32;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .cart-button:hover {
+            background-color: #388E3C;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Shop Dairy Products</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="abt.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
+
+<main>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Fresh Milk</td>
+            <td>Our high-quality fresh cow's milk.</td>
+            <td>50rs</td>
+            <td><img src="milk.jpg" alt="Fresh Milk" class="product-image"></td>
+            <td>
+                <button class="cart-button" onclick="addToCart('Fresh Milk', 50)">Add to Cart</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Yogurt</td>
+            <td>Delicious and creamy yogurt.</td>
+            <td>65rs</td>
+            <td><img src="curd.png" alt="Yogurt" class="product-image"></td>
+            <td>
+                <button class="cart-button" onclick="addToCart('Yogurt', 65)">Add to Cart</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Cheese</td>
+            <td>Assorted varieties of cheese.</td>
+            <td>199rs</td>
+            <td><img src="cheese.avif" alt="Cheese" class="product-image"></td>
+            <td>
+                <button class="cart-button" onclick="addToCart('Cheese', 199)">Add to Cart</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Butter</td>
+            <td>Freshly churned and delicious butter.</td>
+            <td>189rs</td>
+            <td><img src="butter.jpg" alt="Butter" class="product-image"></td>
+            <td>
+                <button class="cart-button" onclick="addToCart('Butter', 189)">Add to Cart</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Ice Cream</td>
+            <td>Assorted flavors of premium ice cream.</td>
+            <td>50rs</td>
+            <td><img src="ice.jpg" alt="Ice Cream" class="product-image"></td>
+            <td>
+                <button class="cart-button" onclick="addToCart('Ice Cream', 50)">Add to Cart</button>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Cart section -->
+    <div class="cart-container">
+        <h2>Cart</h2>
+        <ul id="cart-items">
+        </ul>
+        <p>Total Items: <span id="total-items">0</span></p>
+    </div>
+</main>
+
+<footer>
+    <p>Copyright &copy; 2023 Dairy Shop</p>
+</footer>
+<a href="q3_dum.html"><input type="button" value="Back to main page !"></a>
+
+<script>
+    let cart = {};
+    let totalItems = 0;
+
+    function addToCart(product, price) {
+        if (cart[product]) {
+            cart[product] += price;
+        } else {
+            cart[product] = price;
+        }
+        totalItems += price;
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        const cartItems = document.getElementById("cart-items");
+        cartItems.innerHTML = "";
+        for (let product in cart) {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${product}: ${cart[product]} rs`;
+            cartItems.appendChild(listItem);
+        }
+        const totalItemsElement = document.getElementById("total-items");
+        totalItemsElement.textContent = totalItems;
+    }
+</script>
+</body>
+</html>
