@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  background-image: url(train_C.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+</style>
+<head>
+  <title>Online Train Reservation System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Online Train Reservation System</h1>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="abtus.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+
+<main>
+  <section id="home">
+    <h2>Welcome to the Online Train Reservation System</h2>
+    <p>Here, you can book your train tickets online, check PNR status, and cancel tickets.</p>
+    <a href="#">Register to Book Tickets</a>
+  </section>
+
+
+
+  <section id="register">
+    <h2>Register</h2>
+    <form action="/register" method="post">
+      <input type="text" name="name" placeholder="Name">
+      <input type="email" name="email" placeholder="Email Address">
+      <input type="password" name="password" placeholder="Password">
+      <button type="button" onClick="but3()">Register</button>
+<script>
+function but3(){
+alert(" Your details are registered !");
+}
+</script>
+
+    </form>
+  </section>
+
+  <section id="book-ticket">
+    <h2>Book Ticket</h2>
+    <form action="/book-ticket" method="post">
+      <input type="date" name="journey_date" placeholder="Journey Date">
+      <input type="text" name="origin_station" placeholder="Origin Station">
+      <input type="text" name="destination_station" placeholder="Destination Station">
+      <select name="class_type">
+        <option value="AC First Class">AC First Class</option>
+        <option value="AC Two Tier">AC Two Tier</option>
+        <option value="AC Three Tier">AC Three Tier</option>
+        <option value="Sleeper Class">Sleeper Class</option>
+      </select>
+      <input type="number" name="number_of_tickets" placeholder="Number of Tickets">
+      <button type="button" onClick="but2()">Book Ticket</button>
+<script>
+function but2(){
+alert(" your ticket is booked !");
+}
+</script>
+    </form>
+  </section>
+<a href="train-details.html"><input type="button" value="Show Train details"></a>
+
+  <section id="check-pnr-status">
+    <h2>Check PNR Status</h2>
+    <form action="/check-pnr-status" method="post">
+      <input type="text" placeholder="PNR Number">
+      <button type="button" onClick="but1()">PNR Status</button>
+<script>
+function but1(){
+alert(" PNR Number !");
+}
+</script>
+    </form>
+  </section>
+
+  <section id="cancel-ticket">
+    <h2>Cancel Ticket</h2>
+    <form action="/cancel-ticket" method="post">
+      <input type="text" name="pnr_number" placeholder="Cancel Ticket">
+
+      <button type="button" onClick="but()">Cancel Ticket</button>
+<script>
+function but(){
+alert(" your ticket is cancled !");
+}
+</script>
+
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>Copyright &copy; 2023 Online Train Reservation System</p>
+</footer>
+
+</body>
+</html>
